@@ -1,0 +1,165 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #021210;
+}
+h1 {
+    position: relative;
+    text-align: center;
+    color: whitesmoke;
+}
+
+h3 {
+    position: relative;
+    left: 2%;
+    top: 40px
+}
+
+#container {
+    width: 800px;
+    max-height: 750px;
+    margin: 20px auto;
+    background-image: url('https://cdn.glitch.com/767c7113-435d-4b5c-b983-5d6e5c41f78f%2Fwallpaper.png?v=1609624409895');
+    border: 7px solid whitesmoke;
+    border-radius: 80px;
+}
+#hunger-bar {
+    position: relative;
+    border: 10px;
+    border-radius: 50px;
+    width: 200px;
+    background: #ddd;
+    left: 3%;
+    top: 30px;
+   
+}
+#hunger-percent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;  
+    border: 7px solid #F9627D;
+    border-radius: 50px;
+    width: 0%;
+    height: 30px;
+    background: #C65B7C ;
+}
+
+#pet-bar {
+    position: relative;
+    border: 10px;
+    border-radius: 50px;
+    width: 200px;
+    background: #ddd;
+    left: 3%;
+    top: 30px;
+    
+}
+
+
+#pet-percent {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    border: 7px solid #F9627D;
+    border-radius: 50px;
+    width: 0%;
+    height: 30px;
+    background: #C65B7C;
+}
+
+#larry {
+    position: relative;
+    display: flex;
+    margin: 20px auto;
+    transform : "scaleX(1)";
+}
+
+#hand {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    bottom: 300px;
+    left: 40%;
+    width: 9rem;
+}
+#fish {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    bottom: 400px;
+    left: 10%;
+    width: 13rem;
+}
+
+#pictures {
+    height: 450px;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    text-align: center;
+    color: #DB222A;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 5px solid #DB222A;
+    background: #BFDBF7;
+    font-size: 20px;
+    font-weight: 400;
+    transition: ease-out 0.7s;
+    outline: none;
+    padding: 10px;
+}
+
+#speak-button:hover, #pet-button:hover, #hunger-button:hover, #secret-button:hover {
+    box-shadow: inset 200px 0 0 0 yellow;
+    display: inline;
+}
+
+
+#hunger-button {
+    position: relative;
+    left: 43%;
+    bottom: 40px;
+}
+
+#pet-button {
+    position: relative;
+    left: 8%;
+    bottom: 40px;
+}
+
+#speak-button {
+    position: relative;
+    left: 22%;
+    bottom: 40px;
+}
+#secret-button {
+    visibility: hidden;
+
+}
+#hover:hover #secret-button {
+    visibility:visible;
+}
+
+#hover {
+    width: 40px;
+}
+
+#date {
+    position: relative;
+    margin: 0px 20px 0px 700px;
+    right: 20%;
+    letter-spacing: 2px;
+    width: 300px;
+    border: 10px;
+    padding: 15px 0px 0px 0px;
+}
+#satisfied {
+    position: absolute;
+    margin: 0px 0px 0px 530px;
+    max-width: 250px;
+}
