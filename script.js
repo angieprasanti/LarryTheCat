@@ -39,7 +39,7 @@ function defaultPercent () {
 
 //hunger action
 const hungerAction = () => {
-    let id = setInterval(frame,40);
+    let id = setInterval(frame,30);
     function frame(){
         if (hungerWidth === 100) {
             clearInterval(id);
@@ -119,7 +119,7 @@ const hungerAction = () => {
  };
 //pet action
  const petAction = () => {
-    let id = setInterval(frame,40);
+    let id = setInterval(frame,30);
     function frame(){
         if (petWidth === 100) {
             clearInterval(id);
@@ -130,7 +130,6 @@ const hungerAction = () => {
             satisfiedAction();
 
         }
-        
         
         else if (petWidth === 10) {
             larry.style.transform = "rotate(-20deg)";
