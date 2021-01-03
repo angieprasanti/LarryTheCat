@@ -232,7 +232,7 @@ secretButton.onclick = function clickSecret() {
 
 function satisfiedAction()  {
     if (petWidth == 100 && hungerWidth == 100) {
-        return satisfied.innerHTML = 'I\'m satisfied, thank you! I might be hungry again if you refresh the page.';
+        return satisfied.innerHTML = 'I\'m satisfied, thank you!';
     } else if (petWidth == 100) {
         petButton.disabled = 'disable';
     } else if (hungerButton == 100) {
