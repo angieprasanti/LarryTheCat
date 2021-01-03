@@ -7,7 +7,7 @@ const secretButton = document.getElementById('secret-button');
 const customButton = document.getElementById('custom-button');
 const customPet = document.getElementById('custom-name');
 const container = document.getElementById('container');
-
+const main = document.getElementById('main');
 let petPercentWidth = petPercent.style.width;
 let hungerPercentWidth = hungerPercent.style.width
 let satisfied = document.getElementById('satisfied');
@@ -27,7 +27,7 @@ function customNameAction () {
     document.getElementById('web-title').innerHTML = customPet.value + ' The Cat';
     document.getElementById('title').innerHTML = customPet.value + ' The Cat';
     container.hidden = false;
-    document.getElementById('main').hidden = true;
+    main.hidden = true;
 }
 
 function defaultPercent () {
@@ -39,7 +39,7 @@ function defaultPercent () {
 
 //hunger action
 const hungerAction = () => {
-    let id = setInterval(frame,20);
+    let id = setInterval(frame,40);
     function frame(){
         if (hungerWidth === 100) {
             clearInterval(id);
@@ -119,7 +119,7 @@ const hungerAction = () => {
  };
 //pet action
  const petAction = () => {
-    let id = setInterval(frame,20);
+    let id = setInterval(frame,40);
     function frame(){
         if (petWidth === 100) {
             clearInterval(id);
@@ -236,12 +236,23 @@ petButton.onclick = petAction;
 
 hungerButton.onclick = hungerAction;
 
-secretButton.onclick = petAction, hungerAction;
+secretButton.onclick = function() {
+ petAction(), hungerAction();
+}
 
 customButton.onclick = customNameAction;
 
+customPet.onkeyup = function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        customButton.click();
+    }
+};
 
 
+
+
+//satisfied function
 function satisfiedAction()  {
     if (petWidth == 100 && hungerWidth == 100) {
         return satisfied.innerHTML = 'I\'m satisfied, thank you! I might be hungry again if you refresh the page.';
