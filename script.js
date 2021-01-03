@@ -54,6 +54,8 @@ const hungerAction = () => {
             hungerWidth++;
             hungerPercent.style.width = hungerWidth + "%";
             hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.visibility = "visible";
+            fish.style.clipPath = "inset(5% 20% 15% 0%)";
         }
         else if (hungerWidth === 20) {
             larry.style.transform = "rotate(20deg)";
@@ -68,6 +70,8 @@ const hungerAction = () => {
             hungerWidth++;
             hungerPercent.style.width = hungerWidth + "%"
             hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.visibility = "visible";
+            fish.style.clipPath = "inset(5% 20% 15% 35%)";
         }
         else if (hungerWidth === 40) {
             larry.style.transform = "rotate(20deg)";
@@ -81,12 +85,15 @@ const hungerAction = () => {
             hungerWidth++;
             hungerPercent.style.width = hungerWidth + "%"
             hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.visibility = "visible";
+            fish.style.clipPath = "inset(5% 20% 15% 50%)";
         }
         else if (hungerWidth === 60) {
             larry.style.transform = "rotate(20deg)";
             hungerWidth++;
             hungerPercent.style.width = hungerWidth + "%"
             hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.visibility = "visible";
             fish.style.clipPath = "inset(5% 20% 15% 50%)";
         }
         else if (hungerWidth === 70) {
@@ -94,12 +101,14 @@ const hungerAction = () => {
             hungerWidth++;
             hungerPercent.style.width = hungerWidth + "%";
             hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.clipPath = "inset(5% 20% 15% 70%)";
         }
         else if (hungerWidth === 80) {
             larry.style.transform = "rotate(20deg)";
             hungerWidth++;
             hungerPercent.style.width = hungerWidth + "%"
             hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.visibility = "visible";
             fish.style.clipPath = "inset(5% 20% 15% 70%)";
             
         }
@@ -108,6 +117,8 @@ const hungerAction = () => {
             hungerWidth++;
             hungerPercent.style.width = hungerWidth + "%"
             hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.visibility = "visible";
+            fish.style.clipPath = "inset(5% 20% 15% 90%)";
         }
         else{
             hungerWidth++;
