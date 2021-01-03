@@ -264,6 +264,7 @@ function satisfiedAction()  {
 };
 
 
+
 catMoving();
 defaultPercent();
 container.hidden = true;
