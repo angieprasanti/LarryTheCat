@@ -117,7 +117,7 @@ const hungerAction = () => {
         }
     }
  };
- 
+
 //pet action
  const petAction = () => {
     let id = setInterval(frame,30); 
@@ -255,7 +255,7 @@ customPet.onkeyup = function(event) {
 //satisfied function
 function satisfiedAction()  {
     if (petWidth == 100 && hungerWidth == 100) {
-        return satisfied.innerHTML = 'I\'m satisfied, thank you! I might be hungry again if you refresh the page.';
+        return satisfied.innerHTML = 'I\'m satisfied, thank you! I might be hungry again later.';
     } else if (petWidth == 100) {
         petButton.disabled = 'disable';
     } else if (hungerButton == 100) {
