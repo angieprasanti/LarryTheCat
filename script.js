@@ -1,52 +1,258 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title id="web-title"> My Pet Cat </title>
-        <link rel='stylesheet' href='./style.css' type='text/css' />
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    </head>
+// GLobal Scope & things that runs when the page is loaded.
+const larry = document.getElementById('larry');
+const petPercent = document.getElementById('pet-percent');
+const hungerPercent = document.getElementById('hunger-percent');
+const date = document.getElementById('date');
+const secretButton = document.getElementById('secret-button');
+const customButton = document.getElementById('custom-button');
+const customPet = document.getElementById('custom-name');
+const container = document.getElementById('container');
 
-    <body>
-        <div id="main">
-            <input id="custom-name" placeholder="Pick Your Name">
-            <br>
-            <button id="custom-button">Pick</button>
-        </div>
+let petPercentWidth = petPercent.style.width;
+let hungerPercentWidth = hungerPercent.style.width
+let satisfied = document.getElementById('satisfied');
+let hand = document.getElementById('hand');
+let fish = document.getElementById('fish');
+let hungerButton = document.getElementById('hunger-button');
+let petButton = document.getElementById('pet-button');
+let speakButton = document.getElementById('speak-button');
+let petWidth = Math.floor(Math.random() * 31);
+let hungerWidth = Math.floor(Math.random() * 31);
+document.getElementById("date").innerHTML = 'Current Date: ' + new Date().toLocaleDateString();
 
 
-        <div id="hover">
-            <button id="secret-button">Super Owner Button</button>
-        </div>
+// things that runs
 
-        <h1 id="title"></h1>
-        <div id="container">
+function customNameAction () {
+    document.getElementById('web-title').innerHTML = customPet.value + ' The Cat';
+    document.getElementById('title').innerHTML = customPet.value + ' The Cat';
+    container.hidden = false;
+    document.getElementById('main').hidden = true;
+}
+
+function defaultPercent () {
+    hungerPercent.style.width = hungerWidth + '%';
+    hungerPercent.innerHTML = hungerWidth + '%';
+    petPercent.style.width = hungerWidth + '%';
+    petPercent.innerHTML = petWidth + '%';
+};
+
+//hunger action
+const hungerAction = () => {
+    let id = setInterval(frame,20);
+    function frame(){
+        if (hungerWidth === 100) {
+            clearInterval(id);
+            larry.style.transform = "rotate(0deg)";
+            fish.style.visibility = "hidden";
+            hungerPercent.style.background = "#37BF18";
+            hungerPercent.style.border = "7px solid #37BF18";
+            satisfiedAction();
+        }
+        else if (hungerWidth === 10) {
+            larry.style.transform = "rotate(-20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%";
+            hungerPercent.innerHTML  = hungerWidth + "%";
+        }
+        else if (hungerWidth === 20) {
+            larry.style.transform = "rotate(20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%"
+            hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.visibility = "visible";
+            fish.style.clipPath = "inset(5% 20% 15% 20%)";
+        }
+        else if (hungerWidth === 30) {
+            larry.style.transform = "rotate(-20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%"
+            hungerPercent.innerHTML  = hungerWidth + "%";
+        }
+        else if (hungerWidth === 40) {
+            larry.style.transform = "rotate(20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%";
+            hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.clipPath = "inset(5% 20% 15% 35%)";
+        }
+        else if (hungerWidth === 50) {
+            larry.style.transform = "rotate(-20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%"
+            hungerPercent.innerHTML  = hungerWidth + "%";
+        }
+        else if (hungerWidth === 60) {
+            larry.style.transform = "rotate(20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%"
+            hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.clipPath = "inset(5% 20% 15% 50%)";
+        }
+        else if (hungerWidth === 70) {
+            larry.style.transform = "rotate(-20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%";
+            hungerPercent.innerHTML  = hungerWidth + "%";
+        }
+        else if (hungerWidth === 80) {
+            larry.style.transform = "rotate(20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%"
+            hungerPercent.innerHTML  = hungerWidth + "%";
+            fish.style.clipPath = "inset(5% 20% 15% 70%)";
             
-            <div id="date"></div>
+        }
+        else if (hungerWidth === 90) {
+            larry.style.transform = "rotate(-20deg)";
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%"
+            hungerPercent.innerHTML  = hungerWidth + "%";
+        }
+        else{
+            hungerWidth++;
+            hungerPercent.style.width = hungerWidth + "%"
+            hungerPercent.innerHTML  = hungerWidth + "%";
+        
+        }
+    }
+ };
+//pet action
+ const petAction = () => {
+    let id = setInterval(frame,20);
+    function frame(){
+        if (petWidth === 100) {
+            clearInterval(id);
+            larry.style.transform = "rotate(0deg)";
+            hand.style.visibility = "hidden";
+            petPercent.style.background = "#37BF18";
+            petPercent.style.border = "7px solid #37BF18";
+            satisfiedAction();
 
-            <h3>Hunger Level</h3>
-            <div id="hunger-bar">
-                <div id="hunger-percent"></div>
-            </div>
-            
-            <h3>Happiness Level</h3>
-            <div id="pet-bar">
-                <div id="pet-percent"></div>
-            </div>
-            <p id="satisfied"></p>
-            <div id="pictures">
-                <img src="https://cdn.glitch.com/767c7113-435d-4b5c-b983-5d6e5c41f78f%2Fcat.png?v=1609624355501" id="larry"/>
-                <img src="https://cdn.glitch.com/767c7113-435d-4b5c-b983-5d6e5c41f78f%2FHand.png?v=1609624401068" id="hand"/>
-                <img src="https://cdn.glitch.com/767c7113-435d-4b5c-b983-5d6e5c41f78f%2Ffish.png?v=1609624384231" id="fish"/>
-            </div>
+        }
+        
+        
+        else if (petWidth === 10) {
+            larry.style.transform = "rotate(-20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.visibility = "visible";
+            hand.style.bottom = "320px";
+        }
+        
+        else if (petWidth === 20) {
+            larry.style.transform = "rotate(20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.visibility = "visible";
+            hand.style.bottom = "270px";
+        }
+        
+        else if (petWidth === 30) {
+            larry.style.transform = "rotate(-20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.visibility = "visible";
+            hand.style.bottom = "320px";
+        }
+        else if (petWidth === 40) {
+            larry.style.transform = "rotate(20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.visibility = "visible";
+            hand.style.bottom = "270px";
+        }
+        else if (petWidth === 50) {
+            larry.style.transform = "rotate(-20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%"
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.bottom = "320px";
+        }
+        else if (petWidth === 60) {
+            larry.style.transform = "rotate(20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.bottom = "270px";
+        }
+        else if (petWidth === 70) {
+            larry.style.transform = "rotate(-20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.bottom = "320px";
+        }
+        else if (petWidth === 80) {
+            larry.style.transform = "rotate(20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.bottom = "270px";
+        }
+        else if (petWidth === 90) {
+            larry.style.transform = "rotate(-20deg)";
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+            hand.style.bottom = "320px";
+        }
+        else{
+            petWidth++;
+            petPercent.style.width = petWidth + "%";
+            petPercent.innerHTML  = petWidth + "%";
+        
+        }
+   
+    }
+ };
 
-            <button id="speak-button">Speak</button>
-            <button id="hunger-button">Feed</button>
-            <button id="pet-button">Pet</button>
+// Speak action 
+speakButton.onclick = function speakAction() {
+    let audio = document.getElementById('meow');
+    audio.play();
+};
 
-            <audio id="meow">
-                <source src="https://cdn.glitch.com/767c7113-435d-4b5c-b983-5d6e5c41f78f%2FcatSound.mp3?v=1609624358889" type="audio/mp3"/> 
-            </audio>
-        </div>
-    </body>
-    <script src="script.js" type="text/javascript"></script>
-</html>
+//cat moving
+function catMoving() {
+    let larry = document.getElementById('larry');
+    let id = setInterval(setPosition, 750);
+    function setPosition () {
+        if (larry.style.transform === "scaleX(1)") {
+          larry.style.transform = "scaleX(-1)";
+        } else {
+          larry.style.transform = "scaleX(1)"
+        }
+   
+    }
+  
+};
+//onclick events
+petButton.onclick = petAction;
+
+hungerButton.onclick = hungerAction;
+
+secretButton.onclick = petAction, hungerAction;
+
+customButton.onclick = customNameAction;
+
+
+
+function satisfiedAction()  {
+    if (petWidth == 100 && hungerWidth == 100) {
+        return satisfied.innerHTML = 'I\'m satisfied, thank you! I might be hungry again if you refresh the page.';
+    } else if (petWidth == 100) {
+        petButton.disabled = 'disable';
+    } else if (hungerButton == 100) {
+        hungerButton.disabled = 'disable';
+    }
+};
+
+
+catMoving();
+defaultPercent();
+container.hidden = true;
