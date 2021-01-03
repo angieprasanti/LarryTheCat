@@ -117,9 +117,10 @@ const hungerAction = () => {
         }
     }
  };
+ 
 //pet action
  const petAction = () => {
-    let id = setInterval(frame,30);
+    let id = setInterval(frame,30); 
     function frame(){
         if (petWidth === 100) {
             clearInterval(id);
